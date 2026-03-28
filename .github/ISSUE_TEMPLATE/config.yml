@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the skill definition
+    url: https://github.com/AIPMAndy/ceo-skill/blob/main/SKILL.md
+    about: Start with the main skill before opening an issue
