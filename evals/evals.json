@@ -1,0 +1,49 @@
+{
+  "skill_name": "ceo-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们是一个50人的SaaS公司，年收入2000万，现在有一个机会收购一个20人的竞品团队，对方要价3000万。我该不该收购？",
+      "expected_output": "应输出完整的Decision Brief，包含：决策分类（Type 1 — 不可逆决策）、至少3个选项（收购/不收购/替代方案）、财务分析（估值合理性、预期协同效应）、风险分析（整合风险、文化冲突）、明确的推荐和理由、下一步行动计划",
+      "files": [],
+      "expectations": [
+        "Output contains decision type classification",
+        "At least 3 options are presented including a 'do nothing' option",
+        "Financial analysis is included (valuation, revenue multiples, synergy estimates)",
+        "Integration risks are explicitly discussed",
+        "A clear recommendation is given with confidence level",
+        "Next steps with owners and timelines are provided",
+        "Web research was conducted for market context"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我有5个项目需要排优先级：1)重构核心系统 2)拓展海外市场 3)推出AI功能 4)优化客户成功体系 5)开发移动端App。团队资源有限，只能同时做2个。帮我排序。",
+      "expected_output": "应使用ICE评分框架对5个项目进行量化评分，输出优先级排序矩阵，考虑项目间依赖关系，明确推荐先做哪2个及原因，并提供后续序列建议",
+      "files": [],
+      "expectations": [
+        "ICE scoring framework is applied with specific scores",
+        "All 5 initiatives are scored and ranked",
+        "Dependencies between initiatives are considered",
+        "Clear top-2 recommendation is given",
+        "Reasoning explains why these 2 first",
+        "A suggested sequence for remaining 3 is provided"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "紧急！我们的CTO突然提出离职，要去竞对公司，而且他掌握了核心架构的所有know-how。我该怎么办？",
+      "expected_output": "应触发Crisis Mode / OODA Loop，输出立即行动（2小时内）、短期稳定（24小时内）、中长期计划，包括法律保护、知识转移、团队稳定、竞业限制等方面",
+      "files": [],
+      "expectations": [
+        "Crisis mode is activated (recognized as urgent)",
+        "OODA loop framework is applied",
+        "Immediate actions (next 2 hours) are specified",
+        "Legal considerations are addressed (non-compete, IP protection)",
+        "Knowledge transfer / documentation plan is included",
+        "Team stability measures are discussed",
+        "Clear action items with owners are provided"
+      ]
+    }
+  ]
+}
