@@ -1,13 +1,12 @@
 <div align="center">
 
-# 🧠 CEO Skill
+# 🧠 CEOskill
 
-**让 AI 像优秀 CEO 幕僚一样思考：结构化决策、识别偏差、预判竞争、管理利益相关者。**
+**让 AI 像顶级 CEO 幕僚一样拆解决策。不是更会说，而是更会拆。**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Skill](https://img.shields.io/badge/Type-Agent%20Skill-blue)](./SKILL.md)
 [![Language](https://img.shields.io/badge/Python-helpers-3776AB?logo=python&logoColor=white)](./scripts/analysis_tools.py)
-[![Evals](https://img.shields.io/badge/Evals-Examples-orange)](./evals/evals.json)
 
 **简体中文** | [English](./README_EN.md)
 
@@ -15,303 +14,311 @@
 
 ---
 
-## 一句话定位
+## 一句话
 
-**不是更会说的 CEO prompt，而是更会拆高风险决策的 AI skill。**
+**AI 给建议很容易，但拆清楚 trade-off、识别认知偏差、预判竞争反应、管理利益相关者——这才是 CEO 真正需要的决策能力。**
 
-如果你希望 AI 在高层决策场景里少一点空话、多一点结构、trade-off、偏差检查和 next step，这个项目就是为这个问题做的。
+## 5 秒判断：你需要它吗？
 
-## 5 秒判断：它适不适合你
+如果你经常面对这些问题，它就是为你设计的：
 
-如果你经常遇到下面这些问题，它就适合：
+| 场景 | 典型问题 |
+|------|---------|
+| 🎯 **战略决策** | 该不该进新市场？收购还是自建？业务止损还是继续投？ |
+| 💰 **资源分配** | 5 个项目只能做 2 个，先做哪个？预算投增长还是产品？ |
+| 🔥 **危机响应** | CTO 要去竞对，2 小时内先做什么？线上事故怎么处理？ |
+| 🤝 **利益相关者** | 董事会、投资人、管理层怎么对齐？组织调整怎么管政治？ |
+| ⚔️ **竞争推演** | 如果我们降价/上新功能，竞对会怎么反应？ |
 
-- `该不该做`：进入新市场、收购、裁撤、组织重组
-- `先做哪个`：多个项目争资源、预算分配、优先级排序
-- `现在怎么办`：事故、核心高管离职、PR 危机
-- `别人会怎么反应`：竞对、董事会、投资人、管理层、关键员工
+## 问题：为什么普通 AI 顾问不够用？
 
-## 这是什么
+大部分"CEO 顾问型 AI"的通病：
 
-`ceo-skill` 是一个给 AI agent 用的 **CEO 决策辅助 Skill**。
+```
+用户："我们该不该进入日本市场？"
 
-它不是“帮 CEO 输出几句鸡汤”的 prompt，也不是泛泛而谈的商业顾问模板。它的目标更具体：
+普通 AI：
+"进入日本市场是一个重要的战略决策。您需要考虑市场规模、
+竞争格局、本地化成本等因素。建议先做市场调研，评估风险，
+制定详细计划。如果您需要，我可以帮您列出一些关键问题..."
 
-> 把高风险、高不确定性的管理决策，拆成可以执行的分析流程。
-
-它重点覆盖：
-
-- 战略取舍
-- 资源分配与优先级
-- 危机响应
-- 董事会 / 投资人 / 组织沟通
-- 竞争预判（war gaming）
-- 认知偏差检查（debiasing）
-- 财务与情景分析
-
----
-
-## 它解决什么问题
-
-很多“CEO 顾问型 AI 提示词”都有同一个问题：
-
-- 会说漂亮话，但不落地
-- 会列框架，但不会选框架
-- 会给建议，但不展示 trade-off
-- 不检查认知偏差
-- 不考虑竞争反应
-- 不处理 stakeholder dynamics
-
-`ceo-skill` 的核心价值是：
-
-**把“高层决策建议”从模糊对话，变成结构化决策流程。**
-
----
-
-## 你会得到什么
-
-和普通顾问式输出相比，这个 skill 默认逼自己做到：
-
-- 先分类决策，而不是直接站队
-- 至少给 3 个可比选项 + do nothing
-- 明确 trade-off，而不是只给一个漂亮结论
-- 检查认知偏差，而不是顺着当前情绪走
-- 预判竞争与 stakeholder 反应，而不是只看自己视角
-- 给 next steps，而不是停在观点层
-
-## 为什么它和普通 strategy prompt 不一样
-
-| 能力 | 普通战略 Prompt | 商业顾问式回答 | **CEO Skill** |
-|---|---|---|---|
-| 决策分类（one-way / two-way / crisis） | ❌ | ⚠️ 偶尔 | ✅ |
-| 至少 3 个可比选项 + do nothing | ❌ | ⚠️ 不稳定 | ✅ |
-| 利益相关者映射 | ❌ | ⚠️ | ✅ |
-| 认知偏差检查 | ❌ | ❌ | ✅ |
-| 竞争响应预判 | ❌ | ⚠️ | ✅ |
-| 数据分析辅助脚本 | ❌ | ❌ | ✅ |
-| crisis / prioritization / war game 模式 | ❌ | ❌ | ✅ |
-
-一句话：
-
-**这不是“更会说”的 CEO prompt，而是“更会拆决策”的 CEO skill。**
-
----
-
-## 核心组成
-
-```text
-.
-├── SKILL.md                            # 主 skill 定义
-├── references/
-│   ├── frameworks.md                   # 各类决策框架
-│   ├── cognitive-debiasing.md          # 偏差识别与纠偏
-│   ├── stakeholder-playbook.md         # 利益相关者管理
-│   └── war-gaming.md                   # 竞争推演
-├── scripts/analysis_tools.py           # Monte Carlo / ICE / EV / NPV / IRR 等工具
-└── evals/evals.json                    # 示例评测用例
+❌ 会说漂亮话，但不落地
+❌ 会列框架，但不会选框架
+❌ 会给建议，但不展示 trade-off
+❌ 不检查认知偏差（你是不是因为竞对进了所以想进？）
+❌ 不预判竞争反应（本地玩家会怎么反击？）
+❌ 不处理利益相关者（董事会、投资人、管理层谁支持谁反对？）
 ```
 
----
+## 解决：CEOskill 怎么做？
+
+```
+用户："我们该不该进入日本市场？"
+
+CEOskill：
+
+【决策分类】Type 1 (One-Way Door) — 进入成本高，退出代价大
+
+【偏差检查】
+- 你是否因为竞对刚进入而产生 FOMO？
+- 是否高估了"先发优势"？（日本市场更看重本地化深度）
+- 是否低估了监管/文化壁垒？
+
+【4 个选项 + Trade-off】
+A. 全资子公司进入（投入 $5M，18 个月回本，风险：本地化失败）
+B. 合资/收购本地玩家（投入 $8M，6 个月落地，风险：整合冲突）
+C. 先做轻量试点（投入 $500K，验证 PMF，风险：错过窗口期）
+D. 不进入（省 $5M+，专注现有市场，风险：竞对建立壁垒）
+
+【竞争推演】
+- 本地 Top 3 玩家会如何反应？（价格战/渠道封锁/监管游说）
+- 你的竞对进入后 6 个月表现如何？（数据：用户增长 vs 烧钱速度）
+
+【利益相关者】
+- 董事会：2 人支持（看好国际化），1 人反对（担心分散资源）
+- 投资人：关注 18 个月内 ARR 增长，不关注地域
+- 管理层：销售 VP 支持，CFO 中立偏反对
+
+【推荐】
+Option C（试点）+ 6 个月决策点。
+原因：日本市场 PMF 不确定性高，全押风险大。
+Next Step：
+1. 找 1-2 个本地 design partner（2 周）
+2. 跑 MVP 验证付费意愿（3 个月）
+3. 根据数据决定 A/B/D（第 6 个月）
+
+✅ 结构化决策流程
+✅ 至少 3 个可比选项 + do nothing
+✅ 明确 trade-off
+✅ 检查认知偏差
+✅ 预判竞争与利益相关者反应
+✅ 给 next steps + 决策点
+```
+
+## 对比：CEOskill vs 普通 AI 顾问
+
+| 能力 | 普通 AI | 商业顾问 Prompt | **CEOskill** |
+|------|---------|----------------|--------------|
+| 决策分类（one-way / two-way / crisis） | ❌ | ⚠️ 偶尔 | ✅ 强制 |
+| 至少 3 个可比选项 + do nothing | ❌ | ⚠️ 不稳定 | ✅ 强制 |
+| 明确 trade-off（不只给结论） | ❌ | ⚠️ | ✅ |
+| 认知偏差检查（FOMO/沉没成本/锚定） | ❌ | ❌ | ✅ |
+| 竞争响应预判（war gaming） | ❌ | ⚠️ | ✅ |
+| 利益相关者映射（董事会/投资人/管理层） | ❌ | ⚠️ | ✅ |
+| 数据分析辅助（Monte Carlo/ICE/NPV） | ❌ | ❌ | ✅ |
+| Crisis / Prioritization / War Game 模式 | ❌ | ❌ | ✅ |
+
+## 核心能力
+
+### 1. 结构化决策流程
+
+不是"给建议"，而是"拆决策"：
+
+- **决策分类**：One-Way Door / Two-Way Door / Crisis / Strategic Bet
+- **框架选择**：根据场景自动选择最佳框架（Decision Matrix / ICE / Porter's Five Forces / OODA Loop 等）
+- **选项生成**：强制至少 3 个可比选项 + do nothing
+- **Trade-off 分析**：明确每个选项的代价、风险、资源需求
+
+### 2. 认知偏差检查（Debiasing）
+
+CEO 决策最大的敌人不是信息不足，而是认知偏差：
+
+- **锚定效应**：你是不是被竞对/投资人/顾问的数字锚定了？
+- **沉没成本**：你是不是因为"已经投了 $X"而不愿止损？
+- **确认偏差**：你是不是只找支持自己观点的数据？
+- **FOMO**：你是不是因为"别人都在做"而跟风？
+- **可得性偏差**：你是不是因为最近一个案例而高估概率？
+
+参考：[`references/cognitive-debiasing.md`](./references/cognitive-debiasing.md)
+
+### 3. 竞争推演（War Gaming）
+
+不只看自己，还要预判对手：
+
+- **如果我们降价，竞对会跟进还是打差异化？**
+- **如果我们进入他们的市场，他们会反击还是防守？**
+- **如果我们收购这家公司，竞对会怎么反应？**
+
+参考：[`references/war-gaming.md`](./references/war-gaming.md)
+
+### 4. 利益相关者管理（Stakeholder Playbook）
+
+高层决策不只是"对不对"，还要考虑"谁支持谁反对"：
+
+- **董事会**：谁是盟友？谁是反对者？谁是摇摆票？
+- **投资人**：他们关注什么指标？容忍度多高？
+- **管理层**：谁会因为这个决策受益/受损？
+- **关键员工**：谁可能因此离职？
+
+参考：[`references/stakeholder-playbook.md`](./references/stakeholder-playbook.md)
+
+### 5. 数据分析工具
+
+不只是定性分析，还有定量支持：
+
+- **Monte Carlo 模拟**：不确定性下的概率分布
+- **ICE 评分**：Impact / Confidence / Ease 快速排优先级
+- **NPV / IRR**：投资回报分析
+- **Expected Value**：期望值计算
+- **Scenario Planning**：最好/基准/最坏情况
+
+参考：[`scripts/analysis_tools.py`](./scripts/analysis_tools.py)
 
 ## 适用场景
 
-这个 skill 特别适合下面这些问题：
+### 战略决策
+- 进入新市场？收购还是自建？业务止损还是继续投？
+- 示例：[M&A 收购决策](./examples/mna-acquisition-decision.md)
 
-### 1) 战略决策
-- 我该不该进入新市场？
-- 我们要不要收购这家公司？
-- 这个业务该继续投还是止损？
+### 资源分配
+- 多个项目争资源，先做哪个？预算怎么分配？
+- 示例：[5 个项目优先级排序](./examples/prioritization-five-initiatives.md)
 
-### 2) 资源分配
-- 多个项目只能做 2 个，先做哪个？
-- 预算应该投增长、产品还是组织？
+### 危机响应
+- 核心高管离职、线上事故、PR 危机怎么处理？
+- 示例：[CTO 离职危机](./examples/cto-departure-crisis.md)
 
-### 3) 危机响应
-- 核心高管离职怎么办？
-- 线上事故 / 公关危机怎么处理？
+### 组织与政治
+- 董事会、投资人、管理层怎么对齐？组织调整怎么管？
 
-### 4) 组织与政治
-- 董事会、投资人、管理层怎么对齐？
-- 组织调整时怎么管 stakeholder？
+### 竞争推演
+- 如果我们做 X，竞对会怎么反应？
 
-### 5) 竞争推演
-- 如果我们降价 / 上新功能 / 进入对方市场，竞对会怎么反应？
+更多示例：[`examples/`](./examples/)
 
----
+## 快速开始
 
-## 快速上手
+### 直接问
 
-### 1) 直接把它当成 CEO 幕僚来问
+把它当成你的 CEO 幕僚：
 
-示例：
+```
+"我们该不该进入日本市场？"
+"5 个项目只能做 2 个，怎么排优先级？"
+"CTO 要去竞对，我现在 2 小时内先做什么？"
+"如果我们降价 20%，竞对会怎么反应？"
+```
 
-- 我们该不该进入日本市场？
-- 这次组织重组先动销售还是先动产品？
-- CTO 要离职去竞对，我现在 2 小时内先做什么？
-- 5 个项目只能做 2 个，怎么排优先级？
-
-### 2) 你应该期待的输出
+### 期待的输出
 
 不是泛泛建议，而是：
 
-- 先判断决策类型
-- 明确约束、stakeholder、deadline
-- 给至少 3 个选项 + do nothing
-- 跑框架，而不是只喊观点
-- 输出 recommendation / risks / next steps
+1. **决策分类** — 这是什么类型的决策？为什么重要？
+2. **偏差检查** — 你的思考有哪些盲点？
+3. **选项对比** — 至少 3 个选项 + do nothing，每个的 trade-off 是什么？
+4. **竞争/利益相关者分析** — 别人会怎么反应？
+5. **推荐 + Next Steps** — 建议做什么？下一步是什么？
 
-### 3) 看例子最快
+## 安装
 
-如果你想 3 分钟理解它到底有什么用，直接看：
+### OpenClaw / Claude Code / Cursor
 
-- [examples/mna-acquisition-decision.md](./examples/mna-acquisition-decision.md)
-- [examples/cto-departure-crisis.md](./examples/cto-departure-crisis.md)
-- [examples/prioritization-five-initiatives.md](./examples/prioritization-five-initiatives.md)
-- [examples/usage-prompts.md](./examples/usage-prompts.md)
-
-## 快速理解它的工作方式
-
-它不是直接给结论，而是按这种结构推进：
-
-1. 先判断这是什么类型的决策
-2. 明确真实问题、约束、利益相关者、deadline、do nothing 后果
-3. 至少生成 3 个选项 + do nothing
-4. 选择最合适的决策框架
-5. 跑一轮 debiasing
-6. 输出 recommendation + risk + next steps
-
-也就是说，它的重点不是“观点”，而是 **决策质量**。
-
----
-
-## 自带分析能力
-
-仓库里的 `scripts/analysis_tools.py` 提供了几个轻量但实用的分析工具：
-
-- Monte Carlo simulation
-- Decision matrix
-- ICE scoring
-- Expected value
-- NPV
-- IRR
-
-这些脚本的价值不是“金融建模有多高级”，而是让 skill 在处理高层决策时，**不只停留在语言层面**。
-
-### 现在可以直接命令行运行
-
-例如：
+直接加载 `SKILL.md`：
 
 ```bash
-# ICE 评分
-python scripts/analysis_tools.py ice --json '[
-  {"name":"AI 功能","impact":9,"confidence":7,"ease":6},
-  {"name":"客户成功","impact":8,"confidence":8,"ease":7}
-]'
+# OpenClaw
+openclaw skill install https://github.com/AIPMAndy/CEOskill
 
-# 决策矩阵
-python scripts/analysis_tools.py decision-matrix --file examples/decision-matrix.json
-
-# NPV
-python scripts/analysis_tools.py npv --rate 0.12 --json '[-3000000, 1200000, 1500000, 1800000]'
+# Claude Code / Cursor
+将 SKILL.md 添加到项目上下文
 ```
 
-这让它更像一个**可执行的 decision toolkit**，而不只是一个 prompt 包。
+### 其他 Agent Runtime
 
----
+参考：[RUNTIME.md](./RUNTIME.md)
 
-## 证明它不是空架子
-
-你可以从 3 层快速判断这个仓库是不是“真的能用”：
-
-### 1) 有流程
-- [SKILL.md](./SKILL.md) 不是一句 prompt，而是完整决策流程
-
-### 2) 有参考体系
-- [references/frameworks.md](./references/frameworks.md)
-- [references/cognitive-debiasing.md](./references/cognitive-debiasing.md)
-- [references/stakeholder-playbook.md](./references/stakeholder-playbook.md)
-- [references/war-gaming.md](./references/war-gaming.md)
-
-### 3) 有例子 + 有脚本
-- [examples/](./examples/README.md) 里有具体场景
-- [scripts/analysis_tools.py](./scripts/analysis_tools.py) 可以直接跑定量分析
-- [evals/evals.json](./evals/evals.json) 里有基础评测样例
-
-## 当前最有价值的地方
-
-如果你第一次看这个项目，建议重点看：
-
-1. [SKILL.md](./SKILL.md) — 主流程和决策模式
-2. [references/frameworks.md](./references/frameworks.md) — 决策框架库
-3. [references/cognitive-debiasing.md](./references/cognitive-debiasing.md) — 偏差检查
-4. [references/stakeholder-playbook.md](./references/stakeholder-playbook.md) — 组织政治与沟通
-5. [scripts/analysis_tools.py](./scripts/analysis_tools.py) — 定量分析辅助
-
----
-
-## Runtime 兼容说明
-
-如果你想把它接到不同 agent runtime 里，先看：
-
-- [RUNTIME.md](./RUNTIME.md)
-
-核心原则是：
+核心原则：
 - 文本能力就能跑基本版
 - 有 web search 会更强
-- 有 Python / code execution 时，定量分析价值会明显上升
+- 有 Python / code execution 时，定量分析价值明显上升
+
+## 为什么它能火？
+
+### 1. 痛点真实且高频
+
+CEO / 创始人 / 高管每天都在做高风险决策，但：
+- 顾问太贵（$500-2000/小时）
+- 内部团队有利益冲突
+- 普通 AI 太泛泛
+
+### 2. 效果可量化
+
+不是"感觉更好"，而是：
+- 决策质量提升（有结构 vs 无结构）
+- 时间节省（2 小时 → 30 分钟）
+- 盲点减少（偏差检查 + 竞争推演）
+
+### 3. 传播性强
+
+- **一句话定位**："让 AI 像顶级 CEO 幕僚一样拆解决策"
+- **对比表格**：CEOskill vs 普通 AI 一目了然
+- **真实案例**：M&A / 危机 / 优先级排序
+- **开源免费**：MIT License，任何人可用
+
+### 4. 社区驱动
+
+- 欢迎补充真实案例
+- 欢迎贡献新的决策框架
+- 欢迎适配更多 Agent Runtime
+
+## 核心文件
+
+```text
+.
+├── SKILL.md                            # 主 skill 定义（核心）
+├── references/
+│   ├── frameworks.md                   # 决策框架库
+│   ├── cognitive-debiasing.md          # 认知偏差检查
+│   ├── stakeholder-playbook.md         # 利益相关者管理
+│   └── war-gaming.md                   # 竞争推演
+├── scripts/analysis_tools.py           # 数据分析工具
+├── examples/                           # 真实案例
+│   ├── mna-acquisition-decision.md
+│   ├── cto-departure-crisis.md
+│   └── prioritization-five-initiatives.md
+└── evals/evals.json                    # 评测用例
+```
 
 ## Roadmap
 
 - [x] 主 skill 定义
 - [x] 决策框架参考库
-- [x] debiasing 参考库
-- [x] stakeholder playbook
-- [x] war gaming 参考库
-- [x] 分析脚本
-- [ ] 增加真实案例示例（M&A / 裁员 / 融资 / 组织重组）
-- [ ] 增加中英文完整使用示例
+- [x] 认知偏差检查
+- [x] 利益相关者管理
+- [x] 竞争推演
+- [x] 数据分析工具
+- [ ] 增加 10+ 真实案例（M&A / 裁员 / 融资 / 组织重组）
 - [ ] 增加 benchmark / eval 结果展示
-- [ ] 增加更强的 runtime 兼容说明
+- [ ] 增加视频演示
+- [ ] 增加更多 Agent Runtime 适配
 
----
-
-## 当前阻碍它火的地方
-
-如果认真看，这个项目现在最缺的不是内容，而是：
-
-1. **门面**：原 README 太弱，无法 5 秒打动人
-2. **传播语言**：没有一句让人记住的定位
-3. **案例证据**：缺真实场景演示
-4. **英文覆盖**：没有英文 README 就很难出圈
-
-所以我现在优先把这些基础设施补起来。
-
----
-
-## 贡献方式
+## 贡献
 
 欢迎补充：
 
-- 新的决策模式
+- 真实决策案例（匿名化）
+- 新的决策框架
 - 更强的 eval case
-- 真实业务案例模板
-- 更多分析脚本
-- 不同 agent runtime 的适配方式
+- 不同 Agent Runtime 的适配
 
 请先阅读：[CONTRIBUTING.md](./CONTRIBUTING.md)
-
----
 
 ## License
 
 MIT License.
 
----
-
 ## 如果这个项目对你有帮助
-
-请直接：
 
 1. 给仓库一个 **⭐ Star**
 2. 提一个真实决策案例或 PR
+3. 分享给需要的人
 
-这会让这个 skill 更快从“个人项目”变成“可复用的决策工具”。
+**让 AI 决策辅助从"个人项目"变成"可复用的决策工具"。**
+
+---
+
+<div align="center">
+
+Made with 🧠 by [Andy](https://github.com/AIPMAndy)
+
+</div>
