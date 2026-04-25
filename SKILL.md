@@ -85,6 +85,7 @@ Select the most appropriate framework(s) based on context. See `references/frame
 |-----------|-------------------|---------------------|
 | Choosing between mutually exclusive options | Decision Matrix | Pre-Mortem |
 | Evaluating a strategic bet | Expected Value + Monte Carlo | Regret Minimization |
+| **Decision under uncertainty with emerging evidence** | **Bayesian Decision Analysis** | **Sensitivity Analysis** |
 | Resource allocation across initiatives | ICE Scoring | Opportunity Cost Analysis |
 | Entering new market | Porter's Five Forces + TAM/SAM/SOM | War Gaming |
 | Crisis response | OODA Loop | Stakeholder Triage |
@@ -94,6 +95,7 @@ Select the most appropriate framework(s) based on context. See `references/frame
 | Competitive strategy | War Gaming Simulation | Porter's Five Forces |
 | Complex multi-party negotiation | Stakeholder Power/Interest Matrix | Force Field Analysis |
 | Validating assumptions | First Principles Thinking | Pre-Mortem |
+| **Updating beliefs as new data arrives** | **Bayesian Decision Analysis** | **Expected Value** |
 | Life-changing / irreversible career/company decision | Regret Minimization Framework | Expected Value |
 | Strategic inflection point | Grove's Strategic Inflection | Cynefin + First Principles |
 
@@ -277,8 +279,10 @@ This builds a **learning loop** that improves decision quality over time.
 | File | Contents |
 |------|----------|
 | `references/frameworks.md` | Detailed instructions for all 15+ decision frameworks |
+| `references/bayesian-decision-analysis.md` | **Bayesian thinking for decisions under uncertainty** |
 | `references/stakeholder-playbook.md` | Stakeholder mapping, communication strategies, board/investor playbooks |
 | `references/cognitive-debiasing.md` | 12-bias scan, debiasing techniques, first principles protocol |
 | `references/war-gaming.md` | Competitive war gaming simulation methodology |
 | `scripts/analysis_tools.py` | Python tools: Monte Carlo, Decision Matrix, ICE, EV, NPV, IRR, Scenario Planning |
+| `scripts/bayesian_calculator.py` | **Bayesian updates, likelihood ratios, sensitivity analysis, expected value** |
 | `evals/evals.json` | Test cases for validating skill quality |
